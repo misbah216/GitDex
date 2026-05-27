@@ -1,0 +1,30 @@
+.app .profile-card { background: #161b22; border: 1px solid #30363d; padding: 24px; border-radius: 12px; display:flex; gap:20px; align-items:center; }
+
+/* stronger specificity to avoid accidental overrides */
+.app .profile-card, .app .profile-card * {
+  box-sizing: border-box;
+}
+
+.app .profile-card .avatar { display:block; width:96px !important; height:96px !important; border-radius:50% !important; object-fit:cover !important; border:2px solid rgba(88,166,255,0.12) !important; box-shadow:0 6px 18px rgba(2,6,23,0.6) !important; }
+
+.app .profile-card .profile-info { flex:1 !important; }
+
+.app .profile-card .profile-name { font-size:1.25rem !important; margin:0 0 6px 0 !important; color:#c9d1d9 !important; font-weight:700 !important; }
+
+.app .profile-card .profile-username { margin:0 0 10px 0 !important; color:rgba(201,209,217,0.6) !important; font-size:0.95rem !important; }
+
+.app .profile-card .profile-bio { margin:0 0 12px 0 !important; color:rgba(201,209,217,0.85) !important; line-height:1.4 !important; }
+
+.app .profile-card .profile-location { margin:0 0 8px 0 !important; color:rgba(201,209,217,0.6) !important; font-size:0.95rem !important; }
+
+.app .profile-card .profile-stats { display:flex !important; gap:18px !important; margin:12px 0 !important; }
+
+.app .profile-card .stat { text-align:left !important; }
+
+.app .profile-card .stat-number { display:block !important; font-size:1.05rem !important; font-weight:700 !important; color:#58a6ff !important; }
+
+.app .profile-card .stat-label { display:block !important; font-size:0.85rem !important; color:rgba(201,209,217,0.6) !important; }
+
+.app .profile-card .profile-link { display:inline-block !important; margin-top:6px !important; padding:8px 14px !important; background:linear-gradient(90deg,#58a6ff,#79c0ff) !important; color:#0d1117 !important; border-radius:8px !important; text-decoration:none !important; font-weight:600 !important; }
+
+@media (max-width:640px) { .app .profile-card { flex-direction:column; align-items:flex-start; } .app .profile-card .avatar { width:80px !important; height:80px !important; } }

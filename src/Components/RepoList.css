@@ -1,0 +1,64 @@
+.repo-section { width: 100%; max-width: 600px; margin-top: 20px; }
+
+.repo-title { color: #c9d1d9; margin: 0 0 12px 0; font-weight: 700; }
+
+.repo-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+.repo-card { background: #0f1519; border-radius: 8px; padding: 14px; border: 1px solid rgba(255,255,255,0.04); box-shadow: 0 6px 18px rgba(2,6,23,0.6); min-height: 72px; }
+
+.repo-card.repo-placeholder { opacity: 0.6; display: flex; align-items: center; justify-content: center; color: rgba(201,209,217,0.6); }
+
+.repo-name { color: #79c0ff; text-decoration: none; font-weight: 700; display:block; margin-bottom:6px; }
+
+.repo-desc { margin: 6px 0; color: rgba(201,209,217,0.8); font-size: 0.95rem; }
+
+.repo-meta { display: flex; gap: 12px; color: rgba(201,209,217,0.6); font-size: 0.9rem; align-items:center; }
+
+.repo-lang { background: rgba(88,166,255,0.08); padding: 2px 8px; border-radius: 999px; color: #58a6ff; }
+
+.repo-stars { color: rgba(201,209,217,0.7); }
+
+.repo-empty { color: rgba(201,209,217,0.5); }
+
+@media (min-width: 800px) {
+	.repo-list { grid-template-columns: 1fr; }
+}
+
+/* Animations and hover states */
+.repo-card {
+	transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, border-color 260ms ease;
+	will-change: transform, box-shadow;
+	transform-origin: center;
+	animation: repoFadeUp 420ms ease both;
+}
+
+.repo-card.repo-placeholder { transition: none; animation: none; }
+
+.repo-card:hover {
+	transform: translateY(-14px) scale(1.04);
+	box-shadow: 0 22px 54px rgba(2,6,23,0.72);
+	border-color: rgba(88,166,255,0.12);
+}
+
+.repo-card:focus-within {
+	transform: translateY(-10px) scale(1.02);
+	box-shadow: 0 18px 44px rgba(2,6,23,0.66);
+	outline: none;
+}
+
+.repo-name:hover {
+	text-decoration: none;
+	color: #58a6ff;
+}
+
+@keyframes repoFadeUp {
+	from { opacity: 0; transform: translateY(8px) scale(0.995); }
+	to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Stagger entrance for up to 5 cards */
+.repo-list .repo-card:nth-child(1) { animation-delay: 0ms; }
+.repo-list .repo-card:nth-child(2) { animation-delay: 60ms; }
+.repo-list .repo-card:nth-child(3) { animation-delay: 120ms; }
+.repo-list .repo-card:nth-child(4) { animation-delay: 180ms; }
+.repo-list .repo-card:nth-child(5) { animation-delay: 240ms; }
